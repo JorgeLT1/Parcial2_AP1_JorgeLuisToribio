@@ -1,0 +1,173 @@
+@page "/producto"
+@page "/producto/{productoId:int}"
+@inject ProductoBLL productoBLL
+@inject NotificationService notification
+
+<EditForm Model="producto" OnValidSubmit="Guardar">
+    <DataAnnotationsValidator />
+
+    <div class="accordion-item">
+        <div class="modal-header">
+            <h1>Registro de productos</h1>
+        </div>
+
+        <div class="accordion-body">
+            <div class="col-md-15">
+                <label for="CarroId">ProductoId</label>
+                <div class="input-group">
+                    <InputNumber @bind-Value="producto.ProductoId" class="form-control" />
+                    <button type="button" class="btn btn-primary" @onclick="Buscar"><span class="oi oi-magnifying-glass"></span></button>
+                </div>
+            </div>
+
+            <div class="col-md-15">
+                <label for="Descripcion" class="form-label">Descripcion</label>
+                <InputText @bind-Value="producto.Descripcion" class="form-control" id="Modelo" />
+                <ValidationMessage For="@(() => producto.Descripcion)" />
+            </div>
+
+            <div class="col-md-15">
+                <label for="Costo">Costo</label>
+                <InputNumber @bind-Value="producto.Costo" class="form-control" />
+                <ValidationMessage For="@(() => producto.Costo)" />
+            </div>
+
+            <div class="col-md-15">
+                <label for="Precio">Precio</label>
+                <InputNumber @bind-Value="producto.Precio" class="form-control" />
+                <ValidationMessage For="@(() => producto.Precio)" />
+            </div>
+
+            <div class="col-md-15">
+                <label for="Existencia">Existencia</label>
+                <InputText @bind-Value="producto.Existencia" class="form-control" />
+                <ValidationMessage For="@(() => producto.Existencia)" />
+            </div>
+
+
+        </div>
+
+        <div class="accordion-flush">
+            <button type="button" class="btn btn-primary" @onclick="Nuevo"><span class="oi oi-file"></span> Nuevo</button>
+            <button type="submit" class="btn btn-success"><span class="oi oi-document"></span> Guardar</button>
+            <button type="button" class="btn btn-danger" @onclick="Eliminar"><span class="oi oi-delete"></span> Eliminar</button>
+        </div>
+    </div>
+</EditForm>
+@code {
+    [Parameter]
+    public int productoId {get; set; }
+
+    public Producto producto {get; set; } = new Producto();
+
+    protected override void OnInitialized()
+    {
+        if(productoId > 0)
+        {
+            this.producto.ProductoId = productoId;
+            this.Buscar();
+        }
+    } 
+    private void Buscar()
+    {
+        if (producto.ProductoId > 0)
+        {
+            ShowNotification(
+                new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Success,
+                        Summary = "Se ha encontrado con éxito."
+                    });
+
+            var encontrado = productoBLL.Buscar(producto.ProductoId);
+            Nuevo();
+            if (encontrado != null)
+                this.producto = encontrado;
+
+        }
+    }
+
+    public void Nuevo()
+    {
+        this.producto = new Producto();
+    }
+
+    public void Guardar()
+    {
+        if (ValidateCarro())
+        {
+            var guardado = productoBLL.Guardar(producto);
+
+            if (guardado)
+            {
+                ShowNotification(
+                    new NotificationMessage
+                        {
+                            Severity = NotificationSeverity.Success,
+                            Summary = "Guardado con éxito."
+                        });
+                Nuevo();
+            }
+            else
+            {
+                ShowNotification(
+                    new NotificationMessage
+                        {
+                            Severity = NotificationSeverity.Error,
+                            Summary = "ERROR!!. Favor revisar los campos."
+                        });
+                Nuevo(); 
+            }
+        }
+    }
+
+    public void Eliminar()
+    {
+        if(productoBLL.Eliminar(producto))
+        {
+            ShowNotification(
+                new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Success,
+                    Summary = "No hay nada para eliminar"
+                });
+
+            Nuevo();
+        }
+        else
+        {
+            ShowNotification(
+                new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Error,
+                    Summary = "Error"
+                });
+        }
+    }
+
+    public bool ValidateCarro()
+    {
+        var validationResults = new List<ValidationResult>();
+        var validationContext = new ValidationContext(producto);
+
+        if (!Validator.TryValidateObject(producto, validationContext, validationResults, true))
+        {
+            foreach (var validationResult in validationResults)
+            {
+                ShowNotification(
+                    new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Error,
+                        Summary = validationResult.ErrorMessage
+                    });
+            }
+            return false;
+        }
+        return true;
+    }
+
+    public void ShowNotification(NotificationMessage message)
+    {
+        notification.Notify(message);
+    }
+}

@@ -63,8 +63,8 @@ public class CajaBLL{
              .SingleOrDefault();
     }
     
-    public List<Producto>GetList(Expression<Func<Producto, bool>> criterio){
-        return _Contexto.Producto.AsNoTracking().Where(criterio).ToList();
+    public List<Caja>GetList(Expression<Func<Caja, bool>> criterio){
+        return _Contexto.Caja.AsNoTracking().Where(criterio).ToList();
     }
 
     public void InsertarDetalle(Caja caja)

@@ -1,0 +1,112 @@
+@page "/producto"
+@inject ProductoBLL productoBLL
+
+<EditForm Model="productoBLL">
+    <div class="card">    
+    
+        <div class="card-header">
+            <h4>Consulta Productos
+                  <div class="oi oi-people"></div>
+            </h4>
+        </div>
+  
+       <div class="card-body">
+            <form>
+                <div class="input-group d-flex align-items-end">
+
+                  <div class="form-group col-md-3">
+                  <InputSelect class="form-select text-14" @bind-Value="Filtro">                                
+                        <option value="0">ProductoId</option>
+                        <option value="1">Descripcion</option>
+                        <option value="2">Costo</option>
+                        <option value="3">Precio</option>           
+                        <option value="4">Existencia</option>                                           
+                    </InputSelect>
+                    </div>
+               <div class="Form-group col-md-1"></div>
+    
+                   <div class="Form-group col-3" >
+                        <label>Criterio</label>
+                        <InputText class="form-control" @bind-Value="Criterio" placeholder="Ingrese el criterio de busqueda"  />
+                    </div>
+
+                    <button type="button" class="btn btn-success" @onclick="Consultar">
+                        <i class="oi oi-grid-four-up mr-2" /> Consultar
+                    </button>                   
+                </div>
+            </form>
+        </div>
+    
+         <table class="table table-light table-striped table-bordered">
+            <thead class="thead">
+                <tr class="table">
+                    <th>ProductoId</th>
+                    <th>Descripcion</th>
+                    <th>Costo</th>    
+                    <th>Precio</th>  
+                    <th>Existencia</th>                    
+                </tr>
+            </thead>
+          <tbody>
+                @foreach (var item in LProducto)
+                {
+                    <tr>
+                        <td>@item.ProductoId</td>                      
+                        <td>@item.Descripcion</td>                      
+                        <td>@item.Costo</td>
+                        <td>@item.Precio</td>
+                        <td>@item.Existencia</td>
+                    </tr>                   
+                }          
+            </tbody>         
+        </table>
+ </div>
+</EditForm>
+
+@code{
+    
+    #nullable disable 
+    public string Filtro;
+    public string Criterio;
+    public List<Producto> LProducto { get; set; } = new List<Producto>();
+    public Producto Producto { get; set; } = new Producto();    
+    bool listado = false;
+
+
+  protected override void OnInitialized()
+    {
+        Filtro = "0";
+        LProducto = productoBLL.GetList(e => true);
+    }
+    private void Consultar()
+    {
+        LProducto = new List<Producto>();
+        Producto = new Producto();
+
+        if (Criterio != null)
+        {
+            switch (Filtro)
+            {
+                case "0": 
+                        LProducto = productoBLL.GetList(e => e.ProductoId == int.Parse(Criterio));
+                    break;
+
+                case "1": 
+                        LProducto = productoBLL.GetList(p => p.Descripcion.ToLower().Contains(Criterio.ToLower()));
+                    break;
+
+                case "2": 
+                        LProducto = productoBLL.GetList(e => e.Costo == double.Parse(Criterio));
+                    break;
+
+                case "3": 
+                        LProducto = productoBLL.GetList(e => e.Precio == double.Parse(Criterio));
+                    break;
+                case "4": 
+                        LProducto = productoBLL.GetList(p => p.Existencia.ToLower().Contains(Criterio.ToLower()));
+                    break;
+                
+            }
+        }
+    }
+}
