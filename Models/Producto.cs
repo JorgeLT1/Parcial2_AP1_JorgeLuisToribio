@@ -1,5 +1,7 @@
 
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 public class Producto
 {
     [Key]
@@ -12,5 +14,4 @@ public class Producto
     public double Precio { get; set; }
     [Required(ErrorMessage ="La existencia es requeida, favor introduzca el campo.")]
     public string? Existencia { get; set; }    
-
 }

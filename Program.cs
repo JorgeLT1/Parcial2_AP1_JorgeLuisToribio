@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using Parcial2_AP1_JorgeLuisToribio.Data;
+using Radzen;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 var ConStr = builder.Configuration.GetConnectionString("ConStr");
 
@@ -12,8 +13,11 @@ builder.Services.AddDbContext<Contexto>(options => options.UseSqlite(ConStr));
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<ProductoBLL>();
+builder.Services.AddScoped<DialogService>();
+builder.Services.AddScoped<NotificationService>();
+builder.Services.AddScoped<TooltipService>();
+builder.Services.AddScoped<ContextMenuService>();
 
 var app = builder.Build();
 

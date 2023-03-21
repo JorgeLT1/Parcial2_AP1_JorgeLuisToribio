@@ -1,0 +1,225 @@
+@page "/caja"
+@page "/caja/{CajaId:int}"
+@inject CajaBLL cajaBLL
+@inject ProductoBLL productoBLL
+@inject NotificationService Notificacion
+
+<EditForm Model="caja" OnValidSubmit="Guardar">
+    <DataAnnotationsValidator />
+
+    <div class="accordion-item">
+        <div class="modal-header">
+            <h2>Entrada de productos empacados</h2>
+        </div>
+
+    <div class="accordion-body">
+        <label for="ID">ID</label>
+        <div class="input-group">
+            <InputNumber @bind-Value="caja.CajaId" class="form-control" />
+            <button type="button" class="btn btn-primary" @onclick="Buscar"><span class="oi oi-magnifying-glass"></span></button>
+        </div>
+    </div>
+
+        @*FECHA*@
+        <div class="col-md-15">
+            <label for="Fecha">Fecha</label>
+            <InputDate @bind-Value="caja.Fecha" class="form-control" />
+            <ValidationMessage For="@(() => caja.Fecha)" />
+        </div>
+
+        @*Concepto*@
+        <div class="col-md-15">
+            <br>
+            <label for="Concepto">Concepto</label>
+            <InputText @bind-Value="caja.Concepto" class="form-control" />
+            <ValidationMessage For="@(() => caja.Concepto)" />
+            </div>
+        </div>
+        
+        <div class="modal-header">
+            <h2>Utilizados</h2>
+        </div>
+
+    <div class="accordion-body">
+
+        <div class="col-md-15">
+            <label for="select">Producto</label>
+            <InputSelect class="form-select" @bind-Value="Detalle.ProductoId">
+                @foreach (var producto in Lproducto )
+                    {
+                        <option value="@producto.ProductoId">@producto.Descripcion</option> 
+                    }
+            </InputSelect>
+        </div>
+
+        <div class="col-md-15">
+            <br>
+                <label for="Cantidad">Cantidad</label>
+                <InputNumber @bind-Value="Detalle.Cantidad" class="form-control" />
+                <button type="button"class="btn btn-success" @onclick="AgregarDetalle" ><span class="oi oi-plus"></span> ADD</button>
+            <br>
+          </div>
+        <div class="table">
+             <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ProductoId</th>
+                            <th>Descripcion</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                            @foreach (var detalle in caja.cajaDetalle)
+                            {
+                                <tr>
+                                    <td>@detalle.ProductoId</td>
+                                    <td>@detalle.Descripcion</td>
+                                    <td>@detalle.Cantidad</td>
+                                </tr>
+                            }
+                        </tbody>
+                </table>
+            </div>
+     </div>
+        <div class="text-center">
+            <button type="button" class="btn btn-primary" @onclick="Nuevo"> <span class="oi oi-file"></span> Nuevo </button>
+            <button type="submit" class="btn btn-success"><span class="oi oi-document"></span> Guardar</button>
+            <button type="button" class="btn btn-danger" @onclick="Eliminar"><span class="oi oi-trash"></span> Eliminar</button>
+        </div>
+</EditForm>
+
+@code { 
+
+[Parameter]
+
+   public int cajaId{get; set;}
+   public Caja caja {get; set;} = new Caja();
+   public CajaDetalle Detalle = new CajaDetalle();
+   public List<Producto> Lproducto = new List<Producto>();
+
+
+   protected override void OnInitialized()
+   {
+       if(cajaId > 0){
+           caja.CajaId = cajaId;
+           Buscar();
+       }
+   }
+    public void Buscar()
+    {
+        if (caja.CajaId > 0)
+        {
+            ShowNotification(
+                new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Success,
+                        Summary = "Se ha encontrado con exito."
+                    });
+            var encontrado = cajaBLL.Buscar(caja.CajaId);
+            Nuevo();
+            if (encontrado != null)
+                this.caja = encontrado;
+        }
+        else
+        {
+            ShowNotification(
+                new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Error,
+                        Summary = "ERROR, favor intentelo de nuevo."
+                    });   
+        }
+    }
+   void Nuevo(){
+       this.caja = new Caja();
+   }
+
+    public void Guardar()
+    {
+        if (ValidarProducto())
+        {
+            var guardado = cajaBLL.Guardar(caja);
+
+            if (guardado)
+            {
+                ShowNotification(
+                    new NotificationMessage
+                        {
+                            Severity = NotificationSeverity.Success,
+                            Summary = "Guardado con éxito."
+                        });
+                Nuevo();
+            }
+            else
+            {
+                ShowNotification(
+                    new NotificationMessage
+                        {
+                            Severity = NotificationSeverity.Error,
+                            Summary = "ERROR!!. Favor revisar los campos."
+                        });
+                Nuevo(); 
+            }
+        }
+    }
+        public bool ValidarProducto()
+    {
+        var validationResults = new List<ValidationResult>();
+        var validationContext = new ValidationContext(caja);
+
+        if (!Validator.TryValidateObject(caja, validationContext, validationResults, true))
+        {
+            foreach (var validationResult in validationResults)
+            {
+                ShowNotification(
+                    new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Error,
+                        Summary = validationResult.ErrorMessage
+                    });
+            }
+            return false;
+        }
+        return true;
+    }
+
+   void Eliminar(){
+       if(cajaBLL.Eliminar(caja)){
+            ShowNotification(
+                new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Success,
+                        Summary = "Se ha elimado con exito."
+                    }); 
+           
+           Nuevo();
+       }
+       else{
+        ShowNotification(
+            new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Error,
+                    Summary = "Error, no hay elementos para eliminar."
+                });  
+       }
+   }
+
+   public void AgregarDetalle()
+   {
+    caja.cajaDetalle.Add(Detalle);
+    Detalle = new CajaDetalle();
+
+        ShowNotification(
+            new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Success,
+                    Summary = "Guardado Correctamente"
+                });  
+   }
+
+    public void ShowNotification(NotificationMessage message)
+    {
+        Notificacion.Notify(message);
+    }
+
+}
