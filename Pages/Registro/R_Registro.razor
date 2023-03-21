@@ -136,7 +136,7 @@
 
     public void Guardar()
     {
-        if (ValidarProducto())
+        if (ValidarCaja())
         {
             var guardado = cajaBLL.Guardar(caja);
 
@@ -162,7 +162,7 @@
             }
         }
     }
-        public bool ValidarProducto()
+        public bool ValidarCaja()
     {
         var validationResults = new List<ValidationResult>();
         var validationContext = new ValidationContext(caja);

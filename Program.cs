@@ -14,6 +14,7 @@ builder.Services.AddDbContext<Contexto>(options => options.UseSqlite(ConStr));
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<ProductoBLL>();
+builder.Services.AddScoped<CajaBLL>();
 builder.Services.AddScoped<DialogService>();
 builder.Services.AddScoped<NotificationService>();
 builder.Services.AddScoped<TooltipService>();
