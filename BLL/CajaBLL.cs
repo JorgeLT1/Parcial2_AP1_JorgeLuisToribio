@@ -31,7 +31,7 @@ public class CajaBLL{
 
    public bool Guardar(Caja caja) {
    if (caja == null || caja.CajaId <= 0) {
-      return false; // Libro no válido, no se puede guardar
+      return false; 
    }
    
    if (!Existe(caja.CajaId)) {
