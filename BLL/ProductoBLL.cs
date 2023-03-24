@@ -30,7 +30,7 @@ public class ProductoBLL {
 
   public bool Guardar(Producto producto) {
     if (producto == null || producto.ProductoId <= 0) {
-      return false; // Libro no válido, no se puede guardar
+      return false; 
     }
 
     if (!Existe(producto.ProductoId)) {
