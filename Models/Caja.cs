@@ -12,5 +12,11 @@ public class Caja
     [Required(ErrorMessage ="La cantidad es requerida.")]
     public int Cantidad { get; set; }
     [ForeignKey("CajaId")]
+    public string? realizado { get; set; }
     public List<CajaDetalle> cajaDetalle { get; set; } = new List<CajaDetalle>();
+
+    public void QuitarHora()
+    {
+        Fecha = Fecha.Date;
+    }
 }

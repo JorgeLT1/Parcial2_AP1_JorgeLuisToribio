@@ -41,17 +41,32 @@ public class CajaBLL{
    }
 }
 
- public bool Eliminar(Caja caja)
+public bool Eliminar(int cajaId)
 {
-    if (Existe(caja.CajaId))
+    var caja = _Contexto.Caja.Include(p => p.cajaDetalle).FirstOrDefault(p => p.CajaId == cajaId);
+
+    if (caja != null)
     {
-        var CajaEliiminar = _Contexto.Caja.Find(caja.CajaId);
-        _Contexto.Entry(CajaEliiminar).State = EntityState.Deleted;
-        return _Contexto.SaveChanges() > 0;
+        foreach (var detalle in caja.cajaDetalle)
+        {
+            var producto = _Contexto.Producto.Find(detalle.ProductoId);
+            if (producto == null)
+            {
+                continue;
+            }
+            producto.Existencia += detalle.Cantidad;
+            _Contexto.Entry(producto).State = EntityState.Modified;
+        }
+
+        _Contexto.RemoveRange(caja.cajaDetalle);
+        _Contexto.Entry(caja).State = EntityState.Deleted;
+
+        int filasAfectadas = _Contexto.SaveChanges();
+        return filasAfectadas > 0;
     }
     else
     {
-        return false; 
+        return false;
     }
 }
 
@@ -65,22 +80,41 @@ public class CajaBLL{
     
     public List<Caja>GetList(Expression<Func<Caja, bool>> criterio){
         return _Contexto.Caja.AsNoTracking().Where(criterio).ToList();
-    }
+    }  
 
-    public void InsertarDetalle(Caja caja)
+public void InsertarDetalle(Caja caja)
+{
+    if (caja.cajaDetalle?.Any() == true)
     {
-        if (caja == null) throw new ArgumentNullException(nameof(caja));
+        foreach (var item in caja.cajaDetalle)
+        {
+            var producto = _Contexto.Producto.Find(item.ProductoId);
 
-        caja.cajaDetalle ??= new List<CajaDetalle>();
-
+            if (producto != null)
+            {
+                producto.Existencia -= item.Cantidad;
+                _Contexto.Entry(producto).State = EntityState.Modified;
+            }
+        }
         _Contexto.SaveChanges();
     }
-    
-public void ModificarDetalle(Caja cajaActual)
-{
-    var detallesOriginales = _Contexto.CajaDetalle
-        .AsNoTracking()
-        .Where(d => d.CajaId == cajaActual.CajaId)
-        .ToList();
 }
+
+    
+public void ModificarDetalle(Caja caja)
+{
+    foreach (var detalle in caja.cajaDetalle)
+    {
+        var producto = _Contexto.Producto.FirstOrDefault(p => p.ProductoId == detalle.ProductoId);
+        if (producto != null)
+        {
+            producto.Existencia -= detalle.Cantidad;
+            _Contexto.Entry(producto).State = EntityState.Modified;
+        }
+    }
+    
+    _Contexto.SaveChanges();
+}
+
+
 }

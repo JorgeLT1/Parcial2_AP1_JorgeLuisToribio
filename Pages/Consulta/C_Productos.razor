@@ -103,7 +103,7 @@
                         LProducto = productoBLL.GetList(e => e.Precio == double.Parse(Criterio));
                     break;
                 case "4": 
-                        LProducto = productoBLL.GetList(p => p.Existencia.ToLower().Contains(Criterio.ToLower()));
+                        LProducto = productoBLL.GetList(e => e.Existencia == int.Parse(Criterio));
                     break;
                 
             }

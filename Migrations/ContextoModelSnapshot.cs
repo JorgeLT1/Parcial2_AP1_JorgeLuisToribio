@@ -32,6 +32,9 @@ namespace Parcial2_AP1_JorgeLuisToribio.Migrations
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("realizado")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("CajaId");
 
                     b.ToTable("Caja");
@@ -72,12 +75,10 @@ namespace Parcial2_AP1_JorgeLuisToribio.Migrations
                         .HasColumnType("REAL");
 
                     b.Property<string>("Descripcion")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Existencia")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Existencia")
+                        .HasColumnType("INTEGER");
 
                     b.Property<double>("Precio")
                         .HasColumnType("REAL");
@@ -85,6 +86,40 @@ namespace Parcial2_AP1_JorgeLuisToribio.Migrations
                     b.HasKey("ProductoId");
 
                     b.ToTable("Producto");
+
+                    b.HasData(
+                        new
+                        {
+                            ProductoId = 1,
+                            Costo = 150.0,
+                            Descripcion = "Almendra",
+                            Existencia = 40,
+                            Precio = 5.0
+                        },
+                        new
+                        {
+                            ProductoId = 2,
+                            Costo = 250.0,
+                            Descripcion = "Nuez",
+                            Existencia = 50,
+                            Precio = 40.0
+                        },
+                        new
+                        {
+                            ProductoId = 3,
+                            Costo = 200.0,
+                            Descripcion = "Pasas",
+                            Existencia = 20,
+                            Precio = 60.0
+                        },
+                        new
+                        {
+                            ProductoId = 5,
+                            Costo = 400.0,
+                            Descripcion = "Pistachos",
+                            Existencia = 100,
+                            Precio = 30.0
+                        });
                 });
 
             modelBuilder.Entity("CajaDetalle", b =>

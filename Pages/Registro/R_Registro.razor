@@ -1,6 +1,7 @@
 @page "/caja"
 @page "/caja/{cajaId:int}"
 @inject CajaBLL cajaBLL
+@inject ProductoBLL productoBLL
 @inject NotificationService Notificacion
 
 <EditForm Model="caja" OnValidSubmit="Guardar">
@@ -22,7 +23,7 @@
         @*FECHA*@
         <div class="col-md-15">
             <label for="Fecha">Fecha</label>
-            <InputDate @bind-Value="caja.Fecha" class="form-control" />
+            <InputDate @bind-Value="caja.Fecha" class="form-control" format="dd/MM/yyyy" />
             <ValidationMessage For="@(() => caja.Fecha)" />
 
         </div>
@@ -47,22 +48,20 @@
             @*Producto*@
         <div class="col-md-15">
             <label for="select" class="form-label">Producto:</label>
-                <InputSelect class="form-select" @bind-Value="Detalle.ProductoId">
-                 @foreach (var producto in LProductos )
-                 {
-                    <option value="@producto.ProductoId">@producto.Descripcion</option> 
-                 }
-                </InputSelect>
+                    <InputSelect class="form-select" @bind-Value="Detalle.ProductoId">
+                        @foreach (Producto item in productoBLL.GetList(o => true))
+                        {
+                            <option value="@item.ProductoId">@item.Descripcion</option>
+                        }
+                    </InputSelect>
         </div>
 
             @*Cantidad*@
          <div class="col-md-15">
-            <br>
                 <label for="Cantidad">Cantidad</label>
                 <InputNumber @bind-Value="Detalle.Cantidad" class="form-control" />
                 <ValidationMessage For="@(() => Detalle.Cantidad)" />
-                <button type="button"class="btn btn-success" @onclick="AgregarDetalle" ><span class="oi oi-plus"></span> ADD</button>
-            <br>
+                <button type="button"class="btn btn-success" @onclick="AgregarDetalle" ><span class="oi oi-plus"></span>AGREGAR</button>
           </div>
 
             @*Tabla detalle*@
@@ -80,13 +79,30 @@
                             {
                                 <tr>
                                     <td>@detalle.ProductoId</td>
-                                    <td>@detalle.Descripcion</td>
+                                    <td>@productoBLL.Buscar(detalle.ProductoId).Descripcion</td>
                                     <td>@detalle.Cantidad</td>
+                                    <td> <button name="Btn" id="Btn" class="btn btn-danger mr-2" @onclick=@(() => EliminarDetalle(Detalle.CajaDetalleId))> <span class="oi oi-trash"></span></button>
+                                </td>
                                 </tr>
+                                
                             }
                         </tbody>
                 </table>
             </div>
+            <label>Total = @caja.Cantidad</label>
+         
+         @*Producidos*@
+             <div class="modal-header">
+            <h2>Producidos</h2>
+            </div>
+                <div class="col-md-15">
+                     <label for="Descripcion">Descripcion</label>
+                    <InputText @bind-Value="caja.realizado" class="form-control" />
+                </div>
+                <div class="col-md-15">
+                     <label for="Descripcion">Cantidad</label>
+                    <InputNumber @bind-Value="producto.Existencia" class="form-control" />
+                </div>
 
         </div>
 
@@ -106,9 +122,8 @@
 
    public int cajaId{get; set;}
    public Caja caja {get; set;} = new Caja();
+   public Producto producto { get; set; } = new Producto();
    public CajaDetalle Detalle = new CajaDetalle();
-   public  List<Producto> LProductos=  new List<Producto>();
-
    protected override void OnInitialized()
    {
        if(cajaId > 0){
@@ -194,43 +209,91 @@
         return true;
     }
 
-  public void Eliminar(){
-       if(cajaBLL.Eliminar(caja)){
-            ShowNotification(
-                new NotificationMessage
-                    {
-                        Severity = NotificationSeverity.Success,
-                        Summary = "Se ha elimado con exito."
-                    }); 
-           
-           Nuevo();
-       }
-       else{
+public void Eliminar()
+{
+    if (caja != null && caja.CajaId > 0)
+    {
+        if (cajaBLL.Eliminar(caja.CajaId))
+        {
+            ShowNotification(new NotificationMessage
+            {
+                Severity = NotificationSeverity.Success,
+                Summary = "Se ha eliminado con éxito."
+            });
+
+            Nuevo();
+        }
+        else
+        {
+            ShowNotification(new NotificationMessage
+            {
+                Severity = NotificationSeverity.Error,
+                Summary = "Error, no se pudo eliminar el elemento."
+            });
+        }
+    }
+    else
+    {
+        ShowNotification(new NotificationMessage
+        {
+            Severity = NotificationSeverity.Error,
+            Summary = "Error, no hay elementos para eliminar."
+        });
+    }
+}
+
+public void AgregarDetalle()
+{
+    try
+    {
+        if (Detalle?.Cantidad > 0 && Detalle?.ProductoId != null)
+        {
+            if (caja.cajaDetalle == null)
+            {
+                caja.cajaDetalle = new List<CajaDetalle>();
+            }
+            caja.cajaDetalle.Add(Detalle);
+            
+            caja.Cantidad += Detalle.Cantidad; 
+            
+            Detalle = new CajaDetalle();
+        }
+    }
+    catch (Exception ex)
+    {
         ShowNotification(
             new NotificationMessage
-                {
-                    Severity = NotificationSeverity.Error,
-                    Summary = "Error, no hay elementos para eliminar."
-                });  
-       }
-   }
+            {
+                Severity = NotificationSeverity.Error,
+                Summary = "Ha ocurrido un error al agregar el detalle.",
+                Detail = ex.Message
+            }
+        );
+    }
+}
 
-   public void AgregarDetalle()
-   {
-    caja.cajaDetalle.Add(Detalle);
-    Detalle = new CajaDetalle();
 
-        ShowNotification(
-            new NotificationMessage
-                {
-                    Severity = NotificationSeverity.Success,
-                    Summary = "Guardado Correctamente"
-                });  
-   }
+
+public void EliminarDetalle(int detalleId)
+{
+    if (caja.cajaDetalle == null || detalleId <= 0) return;
+
+    var detalleEliminado = caja.cajaDetalle.SingleOrDefault(o => o.CajaDetalleId == detalleId);
+
+    if (detalleEliminado == null) return;
+
+    caja.cajaDetalle.Remove(detalleEliminado);
+
+    ShowNotification(new NotificationMessage
+    {
+        Severity = NotificationSeverity.Info,
+        Summary = "Se ha eliminado con éxito."
+    });
+}
 
     public void ShowNotification(NotificationMessage message)
     {
         Notificacion.Notify(message);
-    }
+    } 
 
 }
