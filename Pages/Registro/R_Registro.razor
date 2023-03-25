@@ -81,7 +81,7 @@
                                     <td>@detalle.ProductoId</td>
                                     <td>@productoBLL.Buscar(detalle.ProductoId).Descripcion</td>
                                     <td>@detalle.Cantidad</td>
-                                    <td> <button name="Btn" id="Btn" class="btn btn-danger mr-2" @onclick=@(() => EliminarDetalle(Detalle.CajaDetalleId))> <span class="oi oi-trash"></span></button>
+                                    <td> <button name="Btn" id="Btn" class="btn btn-danger mr-2" @onclick=@(() => EliminarDetalle(detalle.CajaDetalleId))> <span class="oi oi-trash"></span></button>
                                 </td>
                                 </tr>
                                 

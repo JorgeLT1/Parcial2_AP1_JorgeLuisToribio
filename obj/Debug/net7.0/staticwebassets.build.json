@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ns9/j5/JlXIh7rvtdgFFs2RBjAsUbah1L68/oc4uodU=",
+  "Hash": "jHci4TPnbc+5rHd0NBiwAi+R0Tv7NRWRBg9Omin+PWg=",
   "Source": "Parcial2_AP1_JorgeLuisToribio",
   "BasePath": "_content/Parcial2_AP1_JorgeLuisToribio",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "Parcial2_AP1_JorgeLuisToribio\\wwwroot",
       "Source": "Parcial2_AP1_JorgeLuisToribio",
-      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\",
       "BasePath": "_content/Parcial2_AP1_JorgeLuisToribio",
       "Pattern": "**"
     }
@@ -578,10 +578,10 @@
       "OriginalItemSpec": "C:\\Users\\Jorge Toribio\\.nuget\\packages\\radzen.blazor\\4.7.14\\staticwebassets\\Radzen.Blazor.js"
     },
     {
-      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Parcial2_AP1_JorgeLuisToribio.styles.css",
+      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Parcial2_AP1_JorgeLuisToribio.styles.css",
       "SourceId": "Parcial2_AP1_JorgeLuisToribio",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Parcial2_AP1_JorgeLuisToribio",
       "RelativePath": "Parcial2_AP1_JorgeLuisToribio.styles.css",
       "AssetKind": "All",
@@ -592,13 +592,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Parcial2_AP1_JorgeLuisToribio.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Parcial2_AP1_JorgeLuisToribio.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Parcial2_AP1_JorgeLuisToribio.bundle.scp.css",
+      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Parcial2_AP1_JorgeLuisToribio.bundle.scp.css",
       "SourceId": "Parcial2_AP1_JorgeLuisToribio",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Parcial2_AP1_JorgeLuisToribio",
       "RelativePath": "Parcial2_AP1_JorgeLuisToribio.bundle.scp.css",
       "AssetKind": "All",
@@ -609,13 +609,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Parcial2_AP1_JorgeLuisToribio.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Parcial2_AP1_JorgeLuisToribio.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "Parcial2_AP1_JorgeLuisToribio",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\",
       "BasePath": "_content/Parcial2_AP1_JorgeLuisToribio",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -629,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "Parcial2_AP1_JorgeLuisToribio",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\",
       "BasePath": "_content/Parcial2_AP1_JorgeLuisToribio",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -646,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "Parcial2_AP1_JorgeLuisToribio",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\",
       "BasePath": "_content/Parcial2_AP1_JorgeLuisToribio",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "Parcial2_AP1_JorgeLuisToribio",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\",
       "BasePath": "_content/Parcial2_AP1_JorgeLuisToribio",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -680,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "Parcial2_AP1_JorgeLuisToribio",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\",
       "BasePath": "_content/Parcial2_AP1_JorgeLuisToribio",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -697,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "Parcial2_AP1_JorgeLuisToribio",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\",
       "BasePath": "_content/Parcial2_AP1_JorgeLuisToribio",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -714,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "Parcial2_AP1_JorgeLuisToribio",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\",
       "BasePath": "_content/Parcial2_AP1_JorgeLuisToribio",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -731,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "Parcial2_AP1_JorgeLuisToribio",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\",
       "BasePath": "_content/Parcial2_AP1_JorgeLuisToribio",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -748,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "Parcial2_AP1_JorgeLuisToribio",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\",
       "BasePath": "_content/Parcial2_AP1_JorgeLuisToribio",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -765,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "Parcial2_AP1_JorgeLuisToribio",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\",
       "BasePath": "_content/Parcial2_AP1_JorgeLuisToribio",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -782,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "Parcial2_AP1_JorgeLuisToribio",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\",
       "BasePath": "_content/Parcial2_AP1_JorgeLuisToribio",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -799,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\css\\site.css",
       "SourceId": "Parcial2_AP1_JorgeLuisToribio",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\",
       "BasePath": "_content/Parcial2_AP1_JorgeLuisToribio",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -816,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\favicon.png",
       "SourceId": "Parcial2_AP1_JorgeLuisToribio",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\wwwroot\\",
       "BasePath": "_content/Parcial2_AP1_JorgeLuisToribio",
       "RelativePath": "favicon.png",
       "AssetKind": "All",

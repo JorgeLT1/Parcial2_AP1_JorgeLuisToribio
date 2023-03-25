@@ -6,7 +6,7 @@ public class Caja
     [Key]
     public int CajaId { get; set; }
     [Required(ErrorMessage ="La fecha es requeridad.")]
-    public DateTime Fecha { get; set; }
+    public DateOnly Fecha { get; set; }
     [Required(ErrorMessage ="El concepto es requerido.")]
     public string? Concepto {get; set;}
     [Required(ErrorMessage ="La cantidad es requerida.")]
@@ -15,8 +15,4 @@ public class Caja
     public string? realizado { get; set; }
     public List<CajaDetalle> cajaDetalle { get; set; } = new List<CajaDetalle>();
 
-    public void QuitarHora()
-    {
-        Fecha = Fecha.Date;
-    }
 }

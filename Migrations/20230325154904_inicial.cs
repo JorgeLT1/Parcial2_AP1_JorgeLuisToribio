@@ -19,7 +19,7 @@ namespace Parcial2_AP1_JorgeLuisToribio.Migrations
                 {
                     CajaId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Fecha = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Fecha = table.Column<DateOnly>(type: "TEXT", nullable: false),
                     Concepto = table.Column<string>(type: "TEXT", nullable: false),
                     Cantidad = table.Column<int>(type: "INTEGER", nullable: false),
                     realizado = table.Column<string>(type: "TEXT", nullable: true)

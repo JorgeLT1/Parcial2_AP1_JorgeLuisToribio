@@ -29,7 +29,7 @@ namespace Parcial2_AP1_JorgeLuisToribio.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("Fecha")
+                    b.Property<DateOnly>("Fecha")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("realizado")

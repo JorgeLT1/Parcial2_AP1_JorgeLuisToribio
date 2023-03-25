@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Parcial2_AP1_JorgeLuisToribio.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20230324180601_inicial")]
+    [Migration("20230325154904_inicial")]
     partial class inicial
     {
         /// <inheritdoc />
@@ -32,7 +32,7 @@ namespace Parcial2_AP1_JorgeLuisToribio.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("Fecha")
+                    b.Property<DateOnly>("Fecha")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("realizado")

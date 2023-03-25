@@ -89,6 +89,7 @@
                     break;
 
                 case "1": 
+                LCaja = cajaBLL.GetList(o => o.Fecha.ToString().Contains(Criterio));
                     break;
 
                 case "2": 
@@ -97,8 +98,7 @@
 
                 case "3": 
                         LCaja = cajaBLL.GetList(e => e.Cantidad == double.Parse(Criterio));
-                    break;
-                
+                    break;       
             }
         }
     }
