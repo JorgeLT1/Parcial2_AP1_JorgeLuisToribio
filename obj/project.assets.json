@@ -1833,11 +1833,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\Parcial2_AP1_JorgeLuisToribio.csproj",
+      "projectUniqueName": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\Parcial2_AP1_JorgeLuisToribio\\Parcial2_AP1_JorgeLuisToribio.csproj",
       "projectName": "Parcial2_AP1_JorgeLuisToribio",
-      "projectPath": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\Parcial2_AP1_JorgeLuisToribio.csproj",
+      "projectPath": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\Parcial2_AP1_JorgeLuisToribio\\Parcial2_AP1_JorgeLuisToribio.csproj",
       "packagesPath": "C:\\Users\\Jorge Toribio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\PROGRAMACION APLICADA I\\Parcial2_AP1_JorgeLuisToribio-1\\obj\\",
+      "outputPath": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\Parcial2_AP1_JorgeLuisToribio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

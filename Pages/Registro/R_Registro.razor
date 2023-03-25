@@ -95,10 +95,15 @@
              <div class="modal-header">
             <h2>Producidos</h2>
             </div>
-                <div class="col-md-15">
-                     <label for="Descripcion">Descripcion</label>
-                    <InputText @bind-Value="caja.realizado" class="form-control" />
-                </div>
+        <div class="col-md-15">
+            <label for="select" class="form-label">Descripcion:</label>
+                    <InputSelect class="form-select" @bind-Value="Detalle.ProductoId">
+                        @foreach (Producto item in productoBLL.GetList(o => true))
+                        {
+                            <option value="@item.ProductoId">@item.Descripcion</option>
+                        }
+                    </InputSelect>
+        </div>
                 <div class="col-md-15">
                      <label for="Descripcion">Cantidad</label>
                     <InputNumber @bind-Value="producto.Existencia" class="form-control" />
