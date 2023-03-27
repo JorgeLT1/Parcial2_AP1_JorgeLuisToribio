@@ -75,6 +75,7 @@ namespace Parcial2_AP1_JorgeLuisToribio.Migrations
                         .HasColumnType("REAL");
 
                     b.Property<string>("Descripcion")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Existencia")
