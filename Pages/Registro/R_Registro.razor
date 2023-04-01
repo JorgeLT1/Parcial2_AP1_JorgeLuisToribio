@@ -105,8 +105,8 @@
                     </InputSelect>
         </div>
                 <div class="col-md-15">
-                     <label for="Descripcion">Cantidad</label>
-                    <InputNumber @bind-Value="producto.Existencia" class="form-control" />
+                     <label for="Cantidad">Cantidad</label>
+                    <InputNumber @bind-Value="caja.Cantidad" class="form-control" />
                 </div>
 
         </div>
@@ -151,15 +151,6 @@
             if (encontrado != null)
                 this.caja = encontrado;
         }
-        else
-        {
-            ShowNotification(
-                new NotificationMessage
-                    {
-                        Severity = NotificationSeverity.Error,
-                        Summary = "ERROR, favor intentelo de nuevo."
-                    });   
-        }
     }
   public void Nuevo(){
        this.caja = new Caja();
@@ -186,8 +177,8 @@
                 ShowNotification(
                     new NotificationMessage
                         {
-                            Severity = NotificationSeverity.Error,
-                            Summary = "ERROR!!. Favor revisar los campos."
+                            Severity = NotificationSeverity.Success,
+                            Summary = "Guardado con éxito."
                         });
                 Nuevo(); 
             }
@@ -195,23 +186,11 @@
     }
     public bool ValidarProducto()
     {
-        var validationResults = new List<ValidationResult>();
-        var validationContext = new ValidationContext(caja);
-
-        if (!Validator.TryValidateObject(caja, validationContext, validationResults, true))
+        if (!String.IsNullOrEmpty(caja.Concepto))
         {
-            foreach (var validationResult in validationResults)
-            {
-                ShowNotification(
-                    new NotificationMessage
-                    {
-                        Severity = NotificationSeverity.Error,
-                        Summary = validationResult.ErrorMessage
-                    });
-            }
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
 public void Eliminar()
@@ -249,33 +228,29 @@ public void Eliminar()
 
 public void AgregarDetalle()
 {
-    try
-    {
         if (Detalle?.Cantidad > 0 && Detalle?.ProductoId != null)
         {
-            if (caja.cajaDetalle == null)
+            var producto = productoBLL.Buscar(Detalle.ProductoId);
+            if(Detalle.Cantidad <= producto?.Existencia)
             {
-                caja.cajaDetalle = new List<CajaDetalle>();
+                caja.cajaDetalle.Add(Detalle);               
+                caja.Cantidad += Detalle.Cantidad;               
+                Detalle = new CajaDetalle();
             }
-            caja.cajaDetalle.Add(Detalle);
-            
-            caja.Cantidad += Detalle.Cantidad; 
-            
-            Detalle = new CajaDetalle();
+            else
+            {
+                ShowNotification(
+                        new NotificationMessage
+                        {
+                            Severity = NotificationSeverity.Error,
+                            Summary = "Ha ocurrido un error al agregar al detalle.",
+                        } 
+                );
+            }
+
+
         }
     }
-    catch (Exception ex)
-    {
-        ShowNotification(
-            new NotificationMessage
-            {
-                Severity = NotificationSeverity.Error,
-                Summary = "Ha ocurrido un error al agregar el detalle.",
-                Detail = ex.Message
-            }
-        );
-    }
-}
 
 private void RemoverDetalle(CajaDetalle item) 
     {

@@ -30,11 +30,7 @@ public class CajaBLL{
 
 
    public bool Guardar(Caja caja) {
-   if (caja == null || caja.CajaId <= 0) {
-      return false; 
-   }
-   
-   if (!Existe(caja.CajaId)) {
+      if (!Existe(caja.CajaId)) {
       return this.Insertar(caja);
    } else {
       return this.Modificar(caja);
@@ -71,11 +67,7 @@ public bool Eliminar(int cajaId)
 }
 
     public Caja? Buscar(int cajaId){
-         return _Contexto.Caja
-             .Where(o => o.CajaId== cajaId)
-             .Include(o =>  o.cajaDetalle)
-             .AsNoTracking()
-             .SingleOrDefault();
+        return _Contexto.Caja.Include(o => o.cajaDetalle).Where(o => o.CajaId == cajaId).SingleOrDefault();
     }
     
     public List<Caja>GetList(Expression<Func<Caja, bool>> criterio){
@@ -98,11 +90,27 @@ public void InsertarDetalle(Caja caja)
         }
         _Contexto.SaveChanges();
     }
+
+    var Pruducido = _Contexto.Producto.Find(caja.ProductoId);
+        if (caja.Cantidad != 0 && Pruducido != null)
+        {
+            Pruducido.Existencia += caja.Cantidad;
+            _Contexto.Entry(Pruducido).State = EntityState.Modified;
+            _Contexto.SaveChanges();
+        }
 }
 
     
 public void ModificarDetalle(Caja caja)
 {
+    var Pruducido = _Contexto.Producto.Find(caja.ProductoId);
+        if (caja.Cantidad != 0 && Pruducido != null)
+        {
+            Pruducido.Existencia += caja.Cantidad;
+            _Contexto.Entry(Pruducido).State = EntityState.Modified;
+            _Contexto.SaveChanges();
+        }
+
     foreach (var detalle in caja.cajaDetalle)
     {
         var producto = _Contexto.Producto.FirstOrDefault(p => p.ProductoId == detalle.ProductoId);

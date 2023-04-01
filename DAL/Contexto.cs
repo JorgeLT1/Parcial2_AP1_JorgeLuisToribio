@@ -15,7 +15,7 @@ public class Contexto : DbContext
                 Descripcion = "Almendra",
                 Costo = 150,
                 Precio = 5,
-                Existencia = 40
+                Existencia = 100
             }
         );
         modelBuilder.Entity<Producto>().HasData(
@@ -24,7 +24,7 @@ public class Contexto : DbContext
                 Descripcion = "Nuez",
                 Costo = 250,
                 Precio = 40,
-                Existencia = 50
+                Existencia = 100
             }
         );
         modelBuilder.Entity<Producto>().HasData(
@@ -33,7 +33,7 @@ public class Contexto : DbContext
                 Descripcion = "Pasas",
                 Costo = 200,
                 Precio = 60,
-                Existencia = 20
+                Existencia = 100
             }
         );
         modelBuilder.Entity<Producto>().HasData(

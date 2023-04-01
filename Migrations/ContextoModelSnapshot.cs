@@ -32,8 +32,8 @@ namespace Parcial2_AP1_JorgeLuisToribio.Migrations
                     b.Property<DateOnly>("Fecha")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("realizado")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("ProductoId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("CajaId");
 
@@ -94,7 +94,7 @@ namespace Parcial2_AP1_JorgeLuisToribio.Migrations
                             ProductoId = 1,
                             Costo = 150.0,
                             Descripcion = "Almendra",
-                            Existencia = 40,
+                            Existencia = 100,
                             Precio = 5.0
                         },
                         new
@@ -102,7 +102,7 @@ namespace Parcial2_AP1_JorgeLuisToribio.Migrations
                             ProductoId = 2,
                             Costo = 250.0,
                             Descripcion = "Nuez",
-                            Existencia = 50,
+                            Existencia = 100,
                             Precio = 40.0
                         },
                         new
@@ -110,7 +110,7 @@ namespace Parcial2_AP1_JorgeLuisToribio.Migrations
                             ProductoId = 3,
                             Costo = 200.0,
                             Descripcion = "Pasas",
-                            Existencia = 20,
+                            Existencia = 100,
                             Precio = 60.0
                         },
                         new

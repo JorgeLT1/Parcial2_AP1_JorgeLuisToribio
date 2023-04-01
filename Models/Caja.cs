@@ -6,13 +6,12 @@ public class Caja
     [Key]
     public int CajaId { get; set; }
     [Required(ErrorMessage ="La fecha es requeridad.")]
-    public DateOnly Fecha { get; set; }
+    public DateOnly Fecha { get; set; } = DateOnly.FromDateTime(DateTime.Now);
     [Required(ErrorMessage ="El concepto es requerido.")]
     public string? Concepto {get; set;}
-    [Required(ErrorMessage ="La cantidad es requerida.")]
     public int Cantidad { get; set; }
     [ForeignKey("CajaId")]
-    public string? realizado { get; set; }
+    public int ProductoId { get; set; }
     public List<CajaDetalle> cajaDetalle { get; set; } = new List<CajaDetalle>();
 
 }

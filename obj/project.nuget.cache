@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/D4fh+POvKbPUsB5EDI5/ngQkhbYx8VShrubYLWkQeJoEejU0G2/WV9lA6MSzmeqoXU4z8liIQrh5XpuOx4hbA==",
+  "dgSpecHash": "easWzQpZOMxCIWnuHygPwufT8s/S8hhD6et4JpqAK64o5qQbnpMWP66OSvOHqsbGzePoicwo1hz1uNyGXZ1y0A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\Parcial2_AP1_JorgeLuisToribio\\Parcial2_AP1_JorgeLuisToribio.csproj",
+  "projectFilePath": "C:\\Users\\Jorge Toribio\\Documents\\Archivos\\7 trimestre\\Parcial2_AP1_JorgeLuisToribio-1\\Parcial2_AP1_JorgeLuisToribio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jorge Toribio\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Jorge Toribio\\.nuget\\packages\\libsassbuilder\\2.0.1\\libsassbuilder.2.0.1.nupkg.sha512",
