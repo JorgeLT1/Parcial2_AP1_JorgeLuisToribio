@@ -76,6 +76,7 @@ public bool Eliminar(int cajaId)
 
 public void InsertarDetalle(Caja caja)
 {
+
     if (caja.cajaDetalle?.Any() == true)
     {
         foreach (var item in caja.cajaDetalle)

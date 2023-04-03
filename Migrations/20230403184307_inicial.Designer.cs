@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Parcial2_AP1_JorgeLuisToribio.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20230331183635_inicial")]
+    [Migration("20230403184307_inicial")]
     partial class inicial
     {
         /// <inheritdoc />
@@ -123,6 +123,14 @@ namespace Parcial2_AP1_JorgeLuisToribio.Migrations
                             Descripcion = "Pistachos",
                             Existencia = 100,
                             Precio = 30.0
+                        },
+                        new
+                        {
+                            ProductoId = 6,
+                            Costo = 100.0,
+                            Descripcion = "Mixto",
+                            Existencia = 10,
+                            Precio = 50.0
                         });
                 });
 

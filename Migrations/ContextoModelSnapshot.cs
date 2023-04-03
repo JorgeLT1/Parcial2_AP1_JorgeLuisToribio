@@ -120,6 +120,14 @@ namespace Parcial2_AP1_JorgeLuisToribio.Migrations
                             Descripcion = "Pistachos",
                             Existencia = 100,
                             Precio = 30.0
+                        },
+                        new
+                        {
+                            ProductoId = 6,
+                            Costo = 100.0,
+                            Descripcion = "Mixto",
+                            Existencia = 10,
+                            Precio = 50.0
                         });
                 });
 

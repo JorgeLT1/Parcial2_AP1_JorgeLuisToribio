@@ -75,7 +75,8 @@ namespace Parcial2_AP1_JorgeLuisToribio.Migrations
                     { 1, 150.0, "Almendra", 100, 5.0 },
                     { 2, 250.0, "Nuez", 100, 40.0 },
                     { 3, 200.0, "Pasas", 100, 60.0 },
-                    { 5, 400.0, "Pistachos", 100, 30.0 }
+                    { 5, 400.0, "Pistachos", 100, 30.0 },
+                    { 6, 100.0, "Mixto", 10, 50.0 }
                 });
 
             migrationBuilder.CreateIndex(
